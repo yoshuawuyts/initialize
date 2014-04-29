@@ -1,0 +1,33 @@
+{
+  "name": "initialize",
+  "version": "0.0.1",
+  "description": "Initialize new projects from the CLI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yoshuawuyts/initialize.git"
+  },
+  "keywords": [
+    "new",
+    "project",
+    "cli",
+    "shell"
+  ],
+  "author": "Yoshua Wuyts <i@yoshuawuyts.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yoshuawuyts/initialize/issues"
+  },
+  "homepage": "https://github.com/yoshuawuyts/initialize",
+  "dependencies": {
+    "debug": "^0.8.1",
+    "commander": "^2.2.0"
+  },
+  "devDependencies": {
+    "should": "^3.3.1",
+    "mocha": "^1.18.2"
+  }
+}
