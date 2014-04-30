@@ -4,7 +4,8 @@
   "description": "Initialize new projects from the CLI",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node bin/initialize.js"
   },
   "repository": {
     "type": "git",
@@ -23,11 +24,11 @@
   },
   "homepage": "https://github.com/yoshuawuyts/initialize",
   "dependencies": {
-    "debug": "^0.8.1",
+    "debug": "*",
     "commander": "^2.2.0"
   },
   "devDependencies": {
-    "should": "^3.3.1",
-    "mocha": "^1.18.2"
+    "should": "*",
+    "mocha": "*"
   }
 }
