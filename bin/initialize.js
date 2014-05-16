@@ -3,22 +3,50 @@
 /**
  * Module dependencies.
  */
-
 var program = require('commander');
+var mkdir = require('mkdirp');
+var path = require('path')
+var fs = require('fs');
+var join = path.join;
 
 /**
- * Options
+ * Options.
  */
 
 program
-  .version('0.0.1')
-  .option('-n, --projectname [value]', 'project name', collect, [])
+  .version(JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version)
   .option('-u, --username [value]', 'username', collect, [])
-  .option('-e, --useremail [value]', 'email address', collect, [])
-  .option('-l, --lib', 'init a library')
-  .option('-L, --library-simple', 'init a simple library')
-  .option('-p, --project', 'init a project')
-  .parse(process.argv);
+  .option('-e, --useremail [value]', 'user email', collect, [])
+
+program.name = 'initialize';
+
+/**
+ * Generate a new 'lib'.
+ */
+
+program
+  .command('lib <name>')
+  .description('initialize a new lib with name <name>')
+  .action(function(name) {
+    mkdir.sync('/hi/poo/baz');/*
+    var css = fs.readFileSync(join(__dirname, '..', 'mocha.css'));
+    var js = fs.readFileSync(join(__dirname, '..', 'mocha.js'));
+    var tmpl = fs.readFileSync(join(__dirname, '..', 'lib/template.html'));
+    fs.writeFileSync(join(path, 'mocha.css'), css);
+    fs.writeFileSync(join(path, 'mocha.js'), js);
+    fs.writeFileSync(join(path, 'tests.js'), '');
+    fs.writeFileSync(join(path, 'index.html'), tmpl);*/
+    process.exit(0);
+  })
+
+/**
+ * Generate a new 'simple lib'.
+ */
+
+/**
+ * Generate a new 'application'.
+ */
+
 
 /**
  * Parse options
@@ -29,6 +57,35 @@ function collect(value, container) {
   return container;
 };
 
-console.log('  project name: %j', program.projectname);
-console.log('  project name: %j', program.username);
-console.log('  project name: %j', program.useremail);
+/**
+ * Handle base files.
+ */
+
+// copy .npmignore
+// copy LICENSE
+// create .travis.yml
+// create package.json
+// create README.md
+
+/**
+ * Create new 'library'.
+ */
+
+// create /bin
+// create /lib
+// create /test
+// create /lib/index.js
+// create /test/index.js
+
+/**
+ * Create new 'simple library'.
+ */
+
+// create index.js
+// create test.js
+
+/**
+ * Create new 'application'.
+ */
+
+  program.parse(process.argv);
