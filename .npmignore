@@ -1,5 +1,11 @@
-docs
-benchmarks
-examples
-test
-Makefile
+# files
+.gitignore
+.npmignore
+.travis.yml
+test.js
+
+# folders
+docs/
+test/
+examples/
+benchmarks/
