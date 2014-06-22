@@ -3,9 +3,10 @@
 /**
  * Module dependencies.
  */
+
 var program = require('commander');
 var mkdir = require('mkdirp');
-var path = require('path')
+var path = require('path');
 var fs = require('fs');
 var join = path.join;
 
@@ -14,78 +15,98 @@ var join = path.join;
  */
 
 program
-  .version(JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf8')).version)
-  .option('-u, --username [value]', 'username', collect, [])
-  .option('-e, --useremail [value]', 'user email', collect, [])
+  .version(
+    JSON.parse(fs.readFileSync(__dirname + '/../package.json', 'utf-8')).version
+  );
 
 program.name = 'initialize';
+
+/**
+ * Read template files
+ */
+
+var gitignore = fs.readFileSync(__dirname + '/../templates/.gitignore', 'utf-8');
+var npmignore = fs.readFileSync(__dirname + '/../templates/.npmignore', 'utf-8');
+var eslintrc = fs.readFileSync(__dirname + '/../templates/.eslintrc', 'utf-8');
+var travis = fs.readFileSync(__dirname + '/../templates/.travis.yml', 'utf-8');
+var pjson = fs.readFileSync(__dirname + '/../templates/package.json', 'utf-8');
+var readme = fs.readFileSync(__dirname + '/../templates/README.md', 'utf-8');
+var license = fs.readFileSync(__dirname + '/../templates/LICENSE', 'utf-8');
+var index = fs.readFileSync(__dirname + '/../templates/index.js', 'utf-8');
+var test = fs.readFileSync(__dirname + '/../templates/test.js', 'utf-8');
 
 /**
  * Generate a new 'lib'.
  */
 
 program
-  .command('lib <name>')
+  .command('lib')
   .description('initialize a new lib with name <name>')
   .action(function(name) {
-    mkdir.sync('/hi/poo/baz');/*
-    var css = fs.readFileSync(join(__dirname, '..', 'mocha.css'));
-    var js = fs.readFileSync(join(__dirname, '..', 'mocha.js'));
-    var tmpl = fs.readFileSync(join(__dirname, '..', 'lib/template.html'));
-    fs.writeFileSync(join(path, 'mocha.css'), css);
-    fs.writeFileSync(join(path, 'mocha.js'), js);
-    fs.writeFileSync(join(path, 'tests.js'), '');
-    fs.writeFileSync(join(path, 'index.html'), tmpl);*/
+    mkdir('./lib/');
+    mkdir('./test/');
+    write('./.gitignore', gitignore);
+    write('./.npmignore', npmignore);
+    write('./.travis.yml', travis);
+    write('./.eslintrc', eslintrc);
+    write('./package.json', pjson);
+    write('./lib/index.js', index);
+    write('./test/index.js', test);
+    write('./README.md', readme);
+    write('./LICENSE', license);
     process.exit(0);
-  })
+  });
 
 /**
- * Generate a new 'simple lib'.
+ * Generate a new 'simple-lib'
  */
+
+program
+  .command('simple-lib')
+  .description('initialize a new simple-lib with name <name>')
+  .action(function(name) {
+    write('./.gitignore', gitignore);
+    write('./.npmignore', npmignore);
+    write('./.travis.yml', travis);
+    write('./.eslintrc', eslintrc);
+    write('./package.json', pjson);
+    write('.index.js', index);
+    write('.test.js', test);
+    write('./README.md', readme);
+    write('./LICENSE', license);
+    process.exit(0);
+  });
 
 /**
- * Generate a new 'application'.
+ * Parse arguments
  */
 
+program.parse(process.argv);
 
 /**
- * Parse options
+ * Mkdir -p.
+ *
+ * @param {String} path
+ * @param {Function} fn
  */
 
-function collect(value, container) {
-  container.push(value);
-  return container;
-};
+function mkdir(path, fn) {
+  console.log(hi)
+  mkdirp(path, 0755, function(err){
+    if (err) throw err;
+    console.log('   \033[36mcreate\033[0m : ' + path);
+    fn && fn();
+  });
+}
 
 /**
- * Handle base files.
+ * echo str > path.
+ *
+ * @param {String} path
+ * @param {String} str
  */
 
-// copy .npmignore
-// copy LICENSE
-// create .travis.yml
-// create package.json
-// create README.md
-
-/**
- * Create new 'library'.
- */
-
-// create /bin
-// create /lib
-// create /test
-// create /lib/index.js
-// create /test/index.js
-
-/**
- * Create new 'simple library'.
- */
-
-// create index.js
-// create test.js
-
-/**
- * Create new 'application'.
- */
-
-  program.parse(process.argv);
+function write(path, str, mode) {
+  fs.writeFile(path, str, { mode: mode || 0666 });
+  console.log('   \x1b[36mcreate\x1b[0m : ' + path);
+}

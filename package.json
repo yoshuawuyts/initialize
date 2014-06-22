@@ -10,6 +10,10 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/yoshuawuyts/initialize.git"
+  },  
+  "preferGlobal": true,
+  "bin": {
+    "initialize": "./bin/initialize.js"
   },
   "keywords": [
     "new",
