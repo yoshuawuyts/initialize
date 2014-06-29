@@ -1,5 +1,5 @@
 {
-  "name": "newPackage",
+  "name": "{{packageName}}",
   "version": "0.0.0",
   "description": "",
   "main": "index.js",
@@ -9,18 +9,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/yoshuawuyts/newPackage"
+    "url": "https://github.com/{{slug}}/{{packageName}}"
   },
   "keywords": [
     "async",
     "parallel"
   ],
-  "author": "Yoshua Wuyts <i@yoshuawuyts.com>",
+  "author": "{{author}} <{{email}}>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/yoshuawuyts/newPackage/issues"
+    "url": "https://github.com/{{slug}}/{{packageName}}/issues"
   },
-  "homepage": "https://github.com/yoshuawuyts/newPackage",
+  "homepage": "https://github.com/{{slug}}/{{packageName}}",
   "devDependencies": {
     "coveralls": "^2.10.0",
     "istanbul": "^0.2.11",
