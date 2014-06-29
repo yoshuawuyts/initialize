@@ -46,6 +46,7 @@ program
   .command('lib')
   .description('initialize a new lib with name <name>')
   .action(function(name) {
+    argChecker('Pleas specify a package name.');
     makeConfig();
     mkdir('./lib/');
     mkdir('./test/');
@@ -62,13 +63,14 @@ program
   });
 
 /**
- * Generate a new 'simple-lib'
+ * Generate a new 'simple-lib'.
  */
 
 program
   .command('simple-lib')
   .description('initialize a new simple-lib with name <name>')
   .action(function(name) {
+    argChecker('Pleas specify a package name.');
     makeConfig();
     write('./.gitignore', gitignore);
     write('./.npmignore', npmignore);
@@ -83,7 +85,7 @@ program
   });
 
 /**
- * Parse arguments
+ * Parse arguments.
  */
 
 program.parse(process.argv);
@@ -93,6 +95,7 @@ program.parse(process.argv);
  *
  * @param {String} path
  * @param {Function} fn
+ * @api private
  */
 
 function mkdir(path, fn) {
@@ -109,6 +112,7 @@ function mkdir(path, fn) {
  *
  * @param {String} path
  * @param {String} str
+ * @api private
  */
 
 function write(path, str, mode) {
@@ -120,14 +124,28 @@ function write(path, str, mode) {
 }
 
 /**
- * Setup configuration
+ * Arg checker.
+ *
+ * @param {String} msg
+ * @api private
+ */
+
+function argChecker(msg) {
+  if (process.argv[3]) return;
+  console.log(msg);
+  process.exit(1);
+}
+
+/**
+ * Setup configuration.
+ *
+ * @api private
  */
 
 function makeConfig() {
   var date = new Date();
   var year = date.getFullYear();
-
-  config.packageName = process.argv[3] || 'packageName';
+  config.packageName = process.argv[3];
   config.year = year;
 }
 
@@ -135,9 +153,8 @@ function makeConfig() {
  * Log help if no commands specified.
  */
 
-if (!process.argv[2]) {
-  program.help();
-} else {
+if (!process.argv[2]) program.help();
+else {
   if ('lib' == process.argv[2]) return;
   if ('simple-lib' == process.argv[2]) return;
   console.log('Incorrect argument. Type \'initialize -h\' to see all options.');

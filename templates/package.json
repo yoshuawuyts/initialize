@@ -11,10 +11,7 @@
     "type": "git",
     "url": "https://github.com/{{slug}}/{{packageName}}"
   },
-  "keywords": [
-    "async",
-    "parallel"
-  ],
+  "keywords": [],
   "author": "{{author}} <{{email}}>",
   "license": "MIT",
   "bugs": {
