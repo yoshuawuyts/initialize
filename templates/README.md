@@ -9,7 +9,7 @@ $ npm i --save {{packageName}}
 ## API
 
 ## License
-[MIT](https://tldrlegal.com/license/mit-license) © [{{author}}]({{email}})
+[MIT](https://tldrlegal.com/license/mit-license) © [{{author}}]({{website}})
 
 [npm-image]: https://img.shields.io/npm/v/{{packageName}}.svg?style=flat
 [npm-url]: https://npmjs.org/package/{{packageName}}
