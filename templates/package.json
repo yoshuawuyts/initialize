@@ -14,10 +14,6 @@
   "keywords": [],
   "author": "{{author}} <{{email}}>",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/{{slug}}/{{packageName}}/issues"
-  },
-  "homepage": "https://github.com/{{slug}}/{{packageName}}",
   "devDependencies": {
     "coveralls": "^2.10.0",
     "istanbul": "^0.2.11",
