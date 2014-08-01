@@ -46,7 +46,7 @@ program
   .command('lib')
   .description('initialize a new lib with name <name>')
   .action(function(name) {
-    argChecker('Pleas specify a package name.');
+    argChecker('Please specify a package name.');
     makeConfig();
     mkdir('./lib/');
     mkdir('./test/');
