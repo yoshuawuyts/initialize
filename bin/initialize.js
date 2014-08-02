@@ -97,6 +97,7 @@ program
     mkdir('./client/');
     mkdir('./client/dispatcher');
     mkdir('./client/modules');
+    mkdir('./client/modules/index');
     mkdir('./client/stores');
     mkdir('./client/views');
     mkdir('./server/');

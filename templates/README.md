@@ -1,5 +1,6 @@
 # {{packageName}}
-[![NPM version][npm-image]][npm-url] [![build status][travis-image]][travis-url] 
+[![NPM version][npm-image]][npm-url] 
+[![build status][travis-image]][travis-url] 
 [![Test coverage][coveralls-image]][coveralls-url]
 
 ## Installation
@@ -7,8 +8,12 @@
 $ npm i --save {{packageName}}
 ```
 ## Overview
+```js
+```
 
 ## API
+```js
+```
 
 ## License
 [MIT](https://tldrlegal.com/license/mit-license) © [{{author}}]({{website}})
