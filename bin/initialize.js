@@ -107,7 +107,7 @@ program
     write('./.travis.yml', travis);
     write('./.eslintrc', eslintrc);
     write('./package.json', pjson);
-    write('./modules/index/index.js', index);
+    write('./client/modules/index/index.js', index);
     write('./test/test.js', test);
     write('./README.md', readme);
     write('./LICENSE', license);
