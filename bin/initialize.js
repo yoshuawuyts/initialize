@@ -85,6 +85,35 @@ program
   });
 
 /**
+ * Generate a new 'simple-lib'.
+ */
+
+program
+  .command('project')
+  .description('initialize a new project with name <name>')
+  .action(function(name) {
+    argChecker('Pleas specify a package name.');
+    makeConfig();
+    mkdir('./client/');
+    mkdir('./client/dispatcher');
+    mkdir('./client/modules');
+    mkdir('./client/stores');
+    mkdir('./client/views');
+    mkdir('./server/');
+    mkdir('./test');
+    write('./.gitignore', gitignore);
+    write('./.npmignore', npmignore);
+    write('./.travis.yml', travis);
+    write('./.eslintrc', eslintrc);
+    write('./package.json', pjson);
+    write('./modules/index/index.js', index);
+    write('./test/test.js', test);
+    write('./README.md', readme);
+    write('./LICENSE', license);
+    process.exit(0);
+  });
+
+/**
  * Parse arguments.
  */
 
