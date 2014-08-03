@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test ./node_modules/mocha/bin/mocha --recursive --harmony-generators -R spec",
-    "coverage": "./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --report text --recursive -- -R spec && rm -rf ./coverage/"
+    "coverage": "node --harmony-generators ./node_modules/istanbul/lib/cli.js cover ./node_modules/mocha/bin/_mocha --report text --recursive -- -R spec && rm -rf ./coverage/"
   },
   "repository": {
     "type": "git",
