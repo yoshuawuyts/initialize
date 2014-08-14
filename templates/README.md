@@ -16,7 +16,8 @@ $ npm i --save {{packageName}}
 ```
 
 ## License
-[MIT](https://tldrlegal.com/license/mit-license) © [{{author}}]({{website}})
+[MIT](https://tldrlegal.com/license/mit-license) ©
+[{{author}}]({{website}})
 
 [npm-image]: https://img.shields.io/npm/v/{{packageName}}.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/{{packageName}}
