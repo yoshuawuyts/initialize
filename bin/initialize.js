@@ -28,11 +28,12 @@ program.name = 'initialize';
  * Read template files
  */
 
+var gulpfile = fs.readFileSync(__dirname + '/../templates/gulpfile.js', 'utf-8');
 var gitignore = fs.readFileSync(__dirname + '/../templates/gitignore', 'utf-8');
 var npmignore = fs.readFileSync(__dirname + '/../templates/npmignore', 'utf-8');
+var pjson = fs.readFileSync(__dirname + '/../templates/package.json', 'utf-8');
 var eslintrc = fs.readFileSync(__dirname + '/../templates/eslintrc', 'utf-8');
 var travis = fs.readFileSync(__dirname + '/../templates/travis.yml', 'utf-8');
-var pjson = fs.readFileSync(__dirname + '/../templates/package.json', 'utf-8');
 var readme = fs.readFileSync(__dirname + '/../templates/README.md', 'utf-8');
 var license = fs.readFileSync(__dirname + '/../templates/LICENSE', 'utf-8');
 var index = fs.readFileSync(__dirname + '/../templates/index.js', 'utf-8');
@@ -110,6 +111,7 @@ program
     write('./client/modules/index/index.js', index);
     write('./test/test.js', test);
     write('./README.md', readme);
+    write('./gulpfile.js', gulpfile);
     write('./LICENSE', license);
     process.exit(0);
   });
