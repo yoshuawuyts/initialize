@@ -1,9 +1,3 @@
-# files
-.gitignore
-.npmignore
-.travis.yml
-test.js
-
 # folders
 docs/
 test/
