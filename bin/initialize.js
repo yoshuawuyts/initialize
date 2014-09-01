@@ -31,6 +31,7 @@ program.name = 'initialize';
 var gulpfile = fs.readFileSync(__dirname + '/../templates/gulpfile.js', 'utf-8');
 var gitignore = fs.readFileSync(__dirname + '/../templates/gitignore', 'utf-8');
 var npmignore = fs.readFileSync(__dirname + '/../templates/npmignore', 'utf-8');
+var history = fs.readFileSync(__dirname + '/../templates/HISTORY.md', 'utf-8');
 var pjson = fs.readFileSync(__dirname + '/../templates/package.json', 'utf-8');
 var eslintrc = fs.readFileSync(__dirname + '/../templates/eslintrc', 'utf-8');
 var travis = fs.readFileSync(__dirname + '/../templates/travis.yml', 'utf-8');
@@ -53,6 +54,7 @@ program
     mkdir('./test/');
     write('./.gitignore', gitignore);
     write('./.npmignore', npmignore);
+    write('./.HISTORY.md', history);
     write('./.travis.yml', travis);
     write('./.eslintrc', eslintrc);
     write('./package.json', pjson);
@@ -75,6 +77,7 @@ program
     makeConfig();
     write('./.gitignore', gitignore);
     write('./.npmignore', npmignore);
+    write('./.HISTORY.md', history);
     write('./.travis.yml', travis);
     write('./.eslintrc', eslintrc);
     write('./package.json', pjson);
@@ -105,6 +108,7 @@ program
     mkdir('./test');
     write('./.gitignore', gitignore);
     write('./.npmignore', npmignore);
+    write('./.HISTORY.md', history);
     write('./.travis.yml', travis);
     write('./.eslintrc', eslintrc);
     write('./package.json', pjson);
@@ -152,7 +156,7 @@ function write(path, str, mode) {
   fs.writeFileSync(path, template, {mode: mode || 0666}, function(err) {
     if (err) console.log(err);
     else console.log('   \x1b[36mcreate\x1b[0m : ' + path);
-  }); 
+  });
 }
 
 /**
