@@ -4,9 +4,14 @@
  * Module dependencies
  */
 
-var should = require('should');
+var {{packageName}} = require('./index');
 
 /**
  * Test
  */
 
+describe('', function() {
+  it('', function() {
+
+  });
+});

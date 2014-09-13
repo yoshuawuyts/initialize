@@ -34,6 +34,7 @@ var npmignore = fs.readFileSync(__dirname + '/../templates/npmignore', 'utf-8');
 var history = fs.readFileSync(__dirname + '/../templates/HISTORY.md', 'utf-8');
 var pjson = fs.readFileSync(__dirname + '/../templates/package.json', 'utf-8');
 var eslintrc = fs.readFileSync(__dirname + '/../templates/eslintrc', 'utf-8');
+var makefile = fs.readFileSync(__dirname + '/../templates/Makefile', 'utf-8');
 var travis = fs.readFileSync(__dirname + '/../templates/travis.yml', 'utf-8');
 var readme = fs.readFileSync(__dirname + '/../templates/README.md', 'utf-8');
 var license = fs.readFileSync(__dirname + '/../templates/LICENSE', 'utf-8');
@@ -60,6 +61,7 @@ program
     write('./package.json', pjson);
     write('./lib/index.js', index);
     write('./test/index.js', test);
+    write('./Makefile', makefile);
     write('./README.md', readme);
     write('./LICENSE', license);
     process.exit(0);
@@ -81,6 +83,7 @@ program
     write('./.travis.yml', travis);
     write('./.eslintrc', eslintrc);
     write('./package.json', pjson);
+    write('./Makefile', makefile);
     write('./index.js', index);
     write('./test.js', test);
     write('./README.md', readme);
@@ -112,6 +115,7 @@ program
     write('./.travis.yml', travis);
     write('./.eslintrc', eslintrc);
     write('./package.json', pjson);
+    write('./Makefile', makefile);
     write('./client/modules/index/index.js', index);
     write('./test/test.js', test);
     write('./README.md', readme);
