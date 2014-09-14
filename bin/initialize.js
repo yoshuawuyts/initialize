@@ -30,7 +30,6 @@ program.name = 'initialize';
 
 var gulpfile = fs.readFileSync(__dirname + '/../templates/gulpfile.js', 'utf-8');
 var gitignore = fs.readFileSync(__dirname + '/../templates/gitignore', 'utf-8');
-var npmignore = fs.readFileSync(__dirname + '/../templates/npmignore', 'utf-8');
 var history = fs.readFileSync(__dirname + '/../templates/HISTORY.md', 'utf-8');
 var pjson = fs.readFileSync(__dirname + '/../templates/package', 'utf-8');
 var eslintrc = fs.readFileSync(__dirname + '/../templates/eslintrc', 'utf-8');
@@ -54,7 +53,6 @@ program
     mkdir('./lib/');
     mkdir('./test/');
     write('./.gitignore', gitignore);
-    write('./.npmignore', npmignore);
     write('./.HISTORY.md', history);
     write('./.travis.yml', travis);
     write('./.eslintrc', eslintrc);
@@ -78,7 +76,6 @@ program
     argChecker('Pleas specify a package name.');
     makeConfig();
     write('./.gitignore', gitignore);
-    write('./.npmignore', npmignore);
     write('./.HISTORY.md', history);
     write('./.travis.yml', travis);
     write('./.eslintrc', eslintrc);
@@ -110,7 +107,6 @@ program
     mkdir('./server/');
     mkdir('./test');
     write('./.gitignore', gitignore);
-    write('./.npmignore', npmignore);
     write('./.HISTORY.md', history);
     write('./.travis.yml', travis);
     write('./.eslintrc', eslintrc);
