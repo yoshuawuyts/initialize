@@ -53,12 +53,12 @@ program
     mkdir('./lib/');
     mkdir('./test/');
     write('./.gitignore', gitignore);
-    write('./.HISTORY.md', history);
     write('./.travis.yml', travis);
     write('./.eslintrc', eslintrc);
     write('./package.json', pjson);
     write('./lib/index.js', index);
     write('./test/index.js', test);
+    write('./HISTORY.md', history);
     write('./Makefile', makefile);
     write('./README.md', readme);
     write('./LICENSE', license);
@@ -76,13 +76,13 @@ program
     argChecker('Pleas specify a package name.');
     makeConfig();
     write('./.gitignore', gitignore);
-    write('./.HISTORY.md', history);
     write('./.travis.yml', travis);
     write('./.eslintrc', eslintrc);
     write('./package.json', pjson);
     write('./Makefile', makefile);
     write('./index.js', index);
     write('./test.js', test);
+    write('./HISTORY.md', history);
     write('./README.md', readme);
     write('./LICENSE', license);
     process.exit(0);
@@ -107,7 +107,7 @@ program
     mkdir('./server/');
     mkdir('./test');
     write('./.gitignore', gitignore);
-    write('./.HISTORY.md', history);
+    write('./HISTORY.md', history);
     write('./.travis.yml', travis);
     write('./.eslintrc', eslintrc);
     write('./package.json', pjson);
