@@ -1,9 +1,9 @@
-SRC = lib/*.js
+SRC = index.js
 
 include node_modules/make-lint/index.mk
 
 LINT_CONFIG = .eslintrc
-TESTS = test/
+TESTS = test.js
 
 test: lint
 	@NODE_ENV=test ./node_modules/.bin/mocha \
