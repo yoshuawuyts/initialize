@@ -8,17 +8,14 @@ npm i -g initialize
 
 ## Usage
 ````
-  Usage: initialize [options] [command]
-
-  Commands:
-
-    lib                    initialize a new lib with name <name>
-    simple-lib             initialize a new simple-lib with name <name>
+  Usage: initialize <dirname>
 
   Options:
 
-    -h, --help     output usage information
-    -V, --version  output the version number
+    -h, --help                    output usage information
+    -V, --version                 output the version number
+    -k, --keyword <tag>           add a keyword to package.json
+    -d, --description <sentence>  add a description
 ````
 
 ## License
