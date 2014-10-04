@@ -1,6 +1,6 @@
 {
   "name": "initialize",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "Initialize new projects from the CLI",
   "main": "index.js",
   "scripts": {
