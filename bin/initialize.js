@@ -119,6 +119,7 @@ function createDir(next) {
 function writeFiles() {
   console.log('');
   console.log('files');
+  write('./.editorconfig', fs.readFileSync(__dirname + '/../templates/editorconfig', 'utf-8'));
   write('./.eslintrc', fs.readFileSync(__dirname + '/../templates/eslintrc', 'utf-8'));
   write('./.gitignore', fs.readFileSync(__dirname + '/../templates/gitignore', 'utf-8'));
   write('./.travis.yml', fs.readFileSync(__dirname + '/../templates/travis.yml', 'utf-8'));
