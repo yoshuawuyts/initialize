@@ -1,2 +1,2 @@
-# 1.0.0 / {{year}}
-- initialize repo
+# 1.0.0 / {{date}}
+- init

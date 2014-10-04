@@ -4,8 +4,10 @@
  * Module dependencies.
  */
 
+var exec = require('child_process').exec;
 var mustache = require('mustache');
 var program = require('commander');
+var assert = require('assert');
 var mkdir = require('mkdirp');
 var path = require('path');
 var fs = require('fs');
@@ -21,49 +23,142 @@ program.name = 'initialize';
 program.version(version);
 
 program.usage('<dirname>')
-program.option('-k, --keyword <tag>', 'add a keyword to package.json');
-program.option('-d, --description <sentence>', 'add a description');
-
+//program.option('-k, --keyword <tag>', 'add a keyword to package.json');
+//program.option('-d, --description <sentence>', 'add a description');
 program.parse(process.argv);
 
 /**
  * Check for errors.
  */
 
-if (!process.argv[2]) throwErr('Please specify a package name. Type \'initialize -h\' to see all options.');
+var packageName = process.argv[2];
+if (!packageName) throwErr('Please specify a package name. Type \'initialize -h\' to see all options.');
 
 /**
- * Generate new lib.
+ * Set config
+ *
+ * Provides us with the following value:
+ *  - name
+ *  - username
+ *  - email
+ *  - url
+ *  - year
+ *  - month
+ *  - date
  */
 
-// get username from npm config
-// create folder with name n
-// assert folder is empty
-// change dir into folder
+console.log('');
+console.log('configuration');
+var pending = 4;
 var config = {};
 
-var date = new Date();
-config.year = date.getFullYear();
-var month = date.getMonth();
-config.month = 2 == month.toString().length ? month : '0' + month;
-var day = date.getDay();
-config.day = 2 == day.toString().length ? day : '0' + day;
-date = config.year + '-' + month + '-' + day;
+exec('npm config get init.author.name', function(err, name) {
+  assert.ifError(err);
+  config.name = name.replace(/(\n)/gm, '');
+  console.log('  user: ' + config.name);
+  if (!--pending) done(null);
+});
 
-config.packageName = process.argv[3];
+exec('npm config get init.author.username', function(err, username) {
+  assert.ifError(err);
+  config.username = username.replace(/(\n)/gm, '');
+  console.log('  username: ' + config.username);
+  if (!--pending) done(null);
+});
 
-write('./.travis.yml', fs.readFileSync(__dirname + '/../templates/travis.yml', 'utf-8'));
-write('./HISTORY.md', fs.readFileSync(__dirname + '/../templates/HISTORY.md', 'utf-8'));
-write('./package.json', fs.readFileSync(__dirname + '/../templates/package', 'utf-8'));
-write('./.gitignore', fs.readFileSync(__dirname + '/../templates/gitignore', 'utf-8'));
-write('./README.md', fs.readFileSync(__dirname + '/../templates/README.md', 'utf-8'));
-write('./.eslintrc', fs.readFileSync(__dirname + '/../templates/eslintrc', 'utf-8'));
-write('./Makefile', fs.readFileSync(__dirname + '/../templates/Makefile', 'utf-8'));
-write('./index.js', fs.readFileSync(__dirname + '/../templates/index.js', 'utf-8'));
-write('./test.js', fs.readFileSync(__dirname + '/../templates/test.js', 'utf-8'));
-write('./LICENSE', fs.readFileSync(__dirname + '/../templates/LICENSE', 'utf-8'));
+exec('npm config get init.author.email', function(err, email) {
+  assert.ifError(err);
+  config.email = email.replace(/(\n)/gm, '');
+  console.log('  email: ' + config.email);
+  if (!--pending) done(null);
+});
 
-process.exit(0);
+exec('npm config get init.author.url', function(err, url) {
+  assert.ifError(err);
+  config.url = url.replace(/(\n)/gm, '');
+  console.log('  url: ' + config.url);
+  if (!--pending) done(null);
+});
+
+function done() {
+  getConfig();
+  createDir();
+  writeFiles();
+  installDeps();
+}
+
+/**
+ * Get configuration.
+ */
+
+function getConfig() {
+  var date = new Date();
+  var day = date.getDate();
+  var month = date.getMonth();
+
+  config.year = date.getFullYear();
+  config.day = 2 == day.toString().length ? day : '0' + day;
+  config.month = 2 == month.toString().length ? month : '0' + month;
+
+  config.packageName = packageName;
+  console.log('  packageName: ' + config.packageName);
+
+  config.date = config.year + '-' + config.month + '-' + config.day;
+  console.log('  date: ' + config.date);
+}
+
+function createDir(next) {
+  mkdir.sync(packageName);
+  process.chdir(packageName);
+}
+
+/**
+ * Write files.
+ */
+
+function writeFiles() {
+  console.log('');
+  console.log('files');
+  write('./.eslintrc', fs.readFileSync(__dirname + '/../templates/eslintrc', 'utf-8'));
+  write('./.gitignore', fs.readFileSync(__dirname + '/../templates/gitignore', 'utf-8'));
+  write('./.travis.yml', fs.readFileSync(__dirname + '/../templates/travis.yml', 'utf-8'));
+  write('./HISTORY.md', fs.readFileSync(__dirname + '/../templates/HISTORY.md', 'utf-8'));
+  write('./index.js', fs.readFileSync(__dirname + '/../templates/index.js', 'utf-8'));
+  write('./LICENSE', fs.readFileSync(__dirname + '/../templates/LICENSE', 'utf-8'));
+  write('./Makefile', fs.readFileSync(__dirname + '/../templates/Makefile', 'utf-8'));
+  write('./README.md', fs.readFileSync(__dirname + '/../templates/README.md', 'utf-8'));
+  write('./package.json', fs.readFileSync(__dirname + '/../templates/package', 'utf-8'));
+  write('./test.js', fs.readFileSync(__dirname + '/../templates/test.js', 'utf-8'));
+}
+
+/**
+ * Install dependencies.
+ */
+
+function installDeps() {
+  console.log('');
+  console.log('dependencies');
+
+  exec('npm i --save-dev mocha', function(err) {
+    console.log('  module: mocha');
+    assert.ifError(err);
+  });
+
+  exec('npm i --save-dev should', function(err) {
+    console.log('  module: should');
+    assert.ifError(err);
+  });
+
+  exec('npm i --save-dev istanbul', function(err) {
+    console.log('  module: istanbul');
+    assert.ifError(err);
+  });
+
+  exec('npm i --save-dev make-lint', function(err) {
+    console.log('  module: make-lint');
+    assert.ifError(err);
+  });
+}
 
 /**
  * Echo str > path.
@@ -73,11 +168,12 @@ process.exit(0);
  * @api private
  */
 
-function write(path, str, mode) {
-  var template = mustache.render(str, config);
-  fs.writeFileSync(path, template, {mode: mode || 0666}, function(err) {
+function write(path, str) {
+  var mt = mustache.render(str, config);
+  console.log('  file: ' + path.split('./')[1]);
+  fs.writeFileSync(path, mt, {mode: 0666}, function(err) {
     if (err) throwErr(err);
-    else console.log('   \x1b[36mcreate\x1b[0m : ' + path);
+    console.log('   \x1b[36mcreate\x1b[0m : ' + path);
   });
 }
 

@@ -1,7 +1,4 @@
-#
-# Temp files.
-#
-
+# tmp files
 lib-cov
 *.seed
 *.log
@@ -11,24 +8,15 @@ lib-cov
 *.pid
 *.gz
 
-#
-# Temp folders.
-#
-
+# tmp folders
 pids/
 logs/
 results/
 coverage/
 
-#
-# Node.js.
-#
-
+# node.js
 node_modules/
 npm-debug.log
 
-#
-# OS X.
-#
-
+# osx
 .DS_Store
