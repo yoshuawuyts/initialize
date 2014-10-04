@@ -35,7 +35,7 @@ init.author.url=http://tobiferret.com
 ## License
 [MIT](https://tldrlegal.com/license/mit-license) © [Yoshua Wuyts](yoshuawuyts.com)
 
-[npm-image]: https://img.shields.io/npm/v/barracks.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/barracks
-[downloads-image]: http://img.shields.io/npm/dm/barracks.svg?style=flat-square
-[downloads-url]: https://npmjs.org/package/barracks
+[npm-image]: https://img.shields.io/npm/v/initialize.svg?style=flat-square
+[npm-url]: https://npmjs.org/package/initialize
+[downloads-image]: http://img.shields.io/npm/dm/initialize.svg?style=flat-square
+[downloads-url]: https://npmjs.org/package/initialize
