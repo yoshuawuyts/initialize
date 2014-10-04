@@ -85,6 +85,7 @@ function done() {
   createDir();
   writeFiles();
   installDeps();
+  initGit();
 }
 
 /**
@@ -107,9 +108,23 @@ function getConfig() {
   console.log('  date: ' + config.date);
 }
 
-function createDir(next) {
+/**
+ * Create directory.
+ */
+
+function createDir() {
   mkdir.sync(packageName);
   process.chdir(packageName);
+}
+
+/**
+ * Initialize git repo.
+ */
+
+function initGit() {
+  exec('git init --quiet', function(err) {
+    assert.ifError(err);
+  });
 }
 
 /**
