@@ -52,7 +52,7 @@ console.log('configuration');
 var pending = 1;
 var config = {};
 
-exec('npm config get init.author.name', function(err, name) {
+exec('npm whoami', function(err, name) {
   assert.ifError(err);
   config.name = name.replace(/(\n)/gm, '');
   console.log('  user: ' + config.name);
