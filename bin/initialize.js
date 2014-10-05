@@ -49,34 +49,13 @@ if (!packageName) throwErr('Please specify a package name. Type \'initialize -h\
 
 console.log('');
 console.log('configuration');
-var pending = 4;
+var pending = 1;
 var config = {};
 
 exec('npm config get init.author.name', function(err, name) {
   assert.ifError(err);
   config.name = name.replace(/(\n)/gm, '');
   console.log('  user: ' + config.name);
-  if (!--pending) done(null);
-});
-
-exec('npm config get init.author.username', function(err, username) {
-  assert.ifError(err);
-  config.username = username.replace(/(\n)/gm, '');
-  console.log('  username: ' + config.username);
-  if (!--pending) done(null);
-});
-
-exec('npm config get init.author.email', function(err, email) {
-  assert.ifError(err);
-  config.email = email.replace(/(\n)/gm, '');
-  console.log('  email: ' + config.email);
-  if (!--pending) done(null);
-});
-
-exec('npm config get init.author.url', function(err, url) {
-  assert.ifError(err);
-  config.url = url.replace(/(\n)/gm, '');
-  console.log('  url: ' + config.url);
   if (!--pending) done(null);
 });
 
@@ -138,7 +117,7 @@ function writeFiles() {
   write('./.eslintrc', fs.readFileSync(__dirname + '/../templates/eslintrc', 'utf-8'));
   write('./.gitignore', fs.readFileSync(__dirname + '/../templates/gitignore', 'utf-8'));
   write('./.travis.yml', fs.readFileSync(__dirname + '/../templates/travis.yml', 'utf-8'));
-  write('./HISTORY.md', fs.readFileSync(__dirname + '/../templates/HISTORY.md', 'utf-8'));
+  write('./CHANGELOG.md', fs.readFileSync(__dirname + '/../templates/CHANGELOG.md', 'utf-8'));
   write('./index.js', fs.readFileSync(__dirname + '/../templates/index.js', 'utf-8'));
   write('./LICENSE', fs.readFileSync(__dirname + '/../templates/LICENSE', 'utf-8'));
   write('./Makefile', fs.readFileSync(__dirname + '/../templates/Makefile', 'utf-8'));

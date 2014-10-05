@@ -6,7 +6,7 @@
   "scripts": {
     "test": "make test"
   },
-  "repository": "{{username}}/{{packageName}}",
+  "repository": "{{name}}/{{packageName}}",
   "keywords": [],
   "license": "MIT",
   "dependencies": {

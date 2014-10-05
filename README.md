@@ -7,7 +7,7 @@ a unix style module.
 
 ## Installation
 ````
-npm i -g initialize
+npm install -g initialize
 ````
 
 ## Usage
@@ -23,17 +23,13 @@ npm i -g initialize
 ````
 
 ## .npmrc
-Make sure`~/.npmrc` contains at least the values shown in the example. Do note
-that the url must start with `http*` or else it wont' be found.
+Make sure`~/.npmrc` contains at least the following values:
 ```
-init.author.name=Tobi Ferret
-init.author.username=tobiferret
-init.author.email=i@tobiferret.com
-init.author.url=http://tobiferret.com
+init.author.name=tobiferret
 ```
 
 ## License
-[MIT](https://tldrlegal.com/license/mit-license) © [Yoshua Wuyts](yoshuawuyts.com)
+[MIT](https://tldrlegal.com/license/mit-license)
 
 [npm-image]: https://img.shields.io/npm/v/initialize.svg?style=flat-square
 [npm-url]: https://npmjs.org/package/initialize
