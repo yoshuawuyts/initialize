@@ -8,12 +8,11 @@ TESTS = test.js
 test: lint
 	@NODE_ENV=test ./node_modules/.bin/mocha \
 		--require should \
-		--harmony-generators \
 		$(TESTS) \
 		--bail
 
 test-cov:
-	@NODE_ENV=test node --harmony-generators \
+	@NODE_ENV=test node \
 		node_modules/.bin/istanbul cover \
 		./node_modules/.bin/_mocha \
 		-- -u exports \
@@ -22,7 +21,7 @@ test-cov:
 		--bail
 
 test-travis:
-	@NODE_ENV=test node --harmony-generators \
+	@NODE_ENV=test node \
 		node_modules/.bin/istanbul cover \
 		./node_modules/.bin/_mocha \
 		--report lcovonly \
