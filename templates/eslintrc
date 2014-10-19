@@ -8,7 +8,6 @@
     "no-warning-comments": 1,
     "no-native-reassign": 1,
     "no-invalid-regexp": 1,
-    "no-fallthrough": 1,
     "no-debugger": 1,
     "no-console": 1,
     "no-empty": 1,
