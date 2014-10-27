@@ -1,10 +1,9 @@
 {
   "name": "initialize",
   "version": "2.5.0",
-  "description": "Initialize new projects from the CLI",
+  "description": "Create a new repo with sane defaults",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node bin/initialize.js"
   },
   "repository": {
@@ -32,9 +31,5 @@
     "debug": "*",
     "mkdirp": "^0.4.0",
     "mustache": "^0.8.2"
-  },
-  "devDependencies": {
-    "should": "*",
-    "mocha": "*"
   }
 }
