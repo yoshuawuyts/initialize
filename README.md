@@ -23,7 +23,7 @@ npm install -g initialize
 ````
 
 ## .npmrc
-Make sure`~/.npmrc` contains at least the following values:
+Make sure`~/.npmrc` contains at least the following value:
 ```
 init.author.name=tobiferret
 ```
