@@ -5,6 +5,7 @@
 [![Downloads][downloads-image]][downloads-url]
 
 
+
 ## Installation
 ```bash
 npm install {{packageName}}
@@ -23,8 +24,7 @@ npm install {{packageName}}
 ## Why?
 
 
-## See also
--
+## See Also
 -
 
 ## License

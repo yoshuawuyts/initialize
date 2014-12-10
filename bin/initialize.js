@@ -117,7 +117,6 @@ function writeFiles() {
   write('./.eslintrc', fs.readFileSync(__dirname + '/../templates/eslintrc', 'utf-8'));
   write('./.gitignore', fs.readFileSync(__dirname + '/../templates/gitignore', 'utf-8'));
   write('./.travis.yml', fs.readFileSync(__dirname + '/../templates/travis.yml', 'utf-8'));
-  write('./CHANGELOG.md', fs.readFileSync(__dirname + '/../templates/CHANGELOG.md', 'utf-8'));
   write('./index.js', fs.readFileSync(__dirname + '/../templates/index.js', 'utf-8'));
   write('./LICENSE', fs.readFileSync(__dirname + '/../templates/LICENSE', 'utf-8'));
   write('./Makefile', fs.readFileSync(__dirname + '/../templates/Makefile', 'utf-8'));
@@ -136,11 +135,6 @@ function installDeps() {
 
   exec('npm i --save-dev mocha', function(err) {
     console.log('  module: mocha');
-    assert.ifError(err);
-  });
-
-  exec('npm i --save-dev should', function(err) {
-    console.log('  module: should');
     assert.ifError(err);
   });
 

@@ -14,9 +14,8 @@
   "devDependencies": {
   },
   "files": [
-    "lib",
     "LICENSE",
     "index.js",
-    "CHANGELOG.md"
+    "README.md"
   ]
 }

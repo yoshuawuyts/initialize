@@ -1,16 +1,15 @@
-/*eslint no-unused-expressions: 0*/
-
 /**
- * Module dependencies
+ * Module dependencies.
  */
 
-var {{packageName}} = require('./index');
+var assert = require('assert');
+var {{packageName}} = require('./');
 
 /**
- * Test
+ * Test.
  */
 
-describe('', function() {
+describe({{packageName}}, function() {
   it('', function() {
 
   });
