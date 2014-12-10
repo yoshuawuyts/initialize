@@ -8,7 +8,7 @@
 
 ## Installation
 ```bash
-npm install {{packageName}}
+$ npm install {{packageName}}
 ```
 
 ## Usage
