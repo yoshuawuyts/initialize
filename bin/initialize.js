@@ -138,7 +138,7 @@ function installDeps() {
   });
 
   exec('npm i --save-dev tape-spec', function(err) {
-    console.log('  module: tape-spec');
+    console.log('  module: tap-spec');
     assert.ifError(err);
   });
 
