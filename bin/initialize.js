@@ -137,7 +137,7 @@ function installDeps() {
     assert.ifError(err);
   });
 
-  exec('npm i --save-dev tape-spec', function(err) {
+  exec('npm i --save-dev tap-spec', function(err) {
     console.log('  module: tap-spec');
     assert.ifError(err);
   });
