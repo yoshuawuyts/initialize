@@ -1,6 +1,6 @@
 {
   "name": "initialize",
-  "version": "4.0.1",
+  "version": "4.0.2",
   "description": "Create a new repo with sane defaults",
   "main": "index.js",
   "scripts": {
