@@ -26,7 +26,6 @@
     // stylistic errors
     "quotes": [2, "single", "avoid-escape"],
     "no-space-before-semi": 2,
-    "space-unary-word-ops": 2,
     "no-spaced-func": 2,
     "yoda": "always",
     "new-cap": 2,

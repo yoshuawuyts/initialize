@@ -1,16 +1,6 @@
-/**
- * Module dependencies.
- */
+var test = require('tape')
+var {{packageName}} = require('./')
 
-var assert = require('assert');
-var {{packageName}} = require('./');
-
-/**
- * Test.
- */
-
-describe({{packageName}}, function() {
-  it('', function() {
-
-  });
-});
+test('', function(t) {
+  t.end()
+})

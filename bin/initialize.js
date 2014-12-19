@@ -119,7 +119,6 @@ function writeFiles() {
   write('./.travis.yml', fs.readFileSync(__dirname + '/../templates/travis.yml', 'utf-8'));
   write('./index.js', fs.readFileSync(__dirname + '/../templates/index.js', 'utf-8'));
   write('./LICENSE', fs.readFileSync(__dirname + '/../templates/LICENSE', 'utf-8'));
-  write('./Makefile', fs.readFileSync(__dirname + '/../templates/Makefile', 'utf-8'));
   write('./README.md', fs.readFileSync(__dirname + '/../templates/README.md', 'utf-8'));
   write('./package.json', fs.readFileSync(__dirname + '/../templates/package', 'utf-8'));
   write('./test.js', fs.readFileSync(__dirname + '/../templates/test.js', 'utf-8'));
@@ -133,18 +132,24 @@ function installDeps() {
   console.log('');
   console.log('dependencies');
 
-  exec('npm i --save-dev mocha', function(err) {
-    console.log('  module: mocha');
+  exec('npm i --save-dev tape', function(err) {
+    console.log('  module: tape');
+    assert.ifError(err);
+  });
+
+  exec('npm i --save-dev tape-spec', function(err) {
+    console.log('  module: tape-spec');
+    assert.ifError(err);
+  });
+
+
+  exec('npm i --save-dev eslint', function(err) {
+    console.log('  module: eslint');
     assert.ifError(err);
   });
 
   exec('npm i --save-dev istanbul', function(err) {
     console.log('  module: istanbul');
-    assert.ifError(err);
-  });
-
-  exec('npm i --save-dev make-lint', function(err) {
-    console.log('  module: make-lint');
     assert.ifError(err);
   });
 }
