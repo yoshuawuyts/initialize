@@ -142,6 +142,10 @@ function installDeps() {
     assert.ifError(err);
   });
 
+  exec('npm i --save-dev tap-bail', function(err) {
+    console.log('  module: tap-bail');
+    assert.ifError(err);
+  });
 
   exec('npm i --save-dev eslint', function(err) {
     console.log('  module: eslint');
