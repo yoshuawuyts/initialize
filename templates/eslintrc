@@ -32,9 +32,11 @@
 
     // mute
     "no-use-before-define": 0,
+    "no-multi-spaces": 0,
     "eol-last": 0,
     "strict": 0,
     "eqeqeq": 0,
-    "curly": 0
+    "curly": 0,
+    "semi": 0
   }
 }
