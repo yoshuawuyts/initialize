@@ -1,5 +1,6 @@
-var test = require('tape')
-var {{packageName}} = require('./')
+
+const index = require('./')
+const test  = require('tape')
 
 test('', function(t) {
   t.end()

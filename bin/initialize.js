@@ -1,17 +1,13 @@
 #!/usr/bin/env node
 
-/**
- * Module dependencies.
- */
-
-var exec = require('child_process').exec;
+var exec     = require('child_process').exec;
 var mustache = require('mustache');
-var program = require('commander');
-var assert = require('assert');
-var mkdir = require('mkdirp');
-var path = require('path');
-var fs = require('fs');
-var join = path.join;
+var program  = require('commander');
+var assert   = require('assert');
+var mkdir    = require('mkdirp');
+var path     = require('path');
+var fs       = require('fs');
+var join     = path.join;
 
 /**
  * Options.
@@ -137,13 +133,8 @@ function installDeps() {
     assert.ifError(err);
   });
 
-  exec('npm i --save-dev tap-spec', function(err) {
-    console.log('  module: tap-spec');
-    assert.ifError(err);
-  });
-
-  exec('npm i --save-dev tap-bail', function(err) {
-    console.log('  module: tap-bail');
+  exec('npm i --save-dev colortape', function(err) {
+    console.log('  module: colortape');
     assert.ifError(err);
   });
 
