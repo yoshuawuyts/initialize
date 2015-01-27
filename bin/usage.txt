@@ -1,0 +1,9 @@
+  Usage: initialize <dirname>
+
+  Options:
+
+    -h, --help                    output usage information
+    -V, --version                 output the version number
+    -k, --keyword <tag>           add a keyword to package.json
+    -d, --description <sentence>  add a description
+
