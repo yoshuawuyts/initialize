@@ -29,6 +29,7 @@
   "dependencies": {
     "commander": "^2.2.0",
     "debug": "*",
+    "minimist": "^1.1.0",
     "mkdirp": "^0.4.0",
     "mustache": "^0.8.2"
   }

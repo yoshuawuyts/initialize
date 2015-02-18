@@ -1,0 +1,21 @@
+#!/usr/bin/env node
+const minimist = require('minimist')
+const init = require('../')
+const fs = require('fs')
+
+// parse arguments
+const argv = minimist(process.argv.slice(2))
+process.stdout.on('error', process.exit);
+
+// help
+const noCommands = process.argv.length <= 2 && process.stdin.isTTY
+if (argv._[0] === 'help' || argv.h || argv.help || noCommands) {
+  return fs.createReadStream(__dirname + '/usage.txt')
+    .pipe(process.stdout)
+    .on('close', process.exit.bind(null, 1))
+}
+
+// version
+if (argv.v || argv.version) {
+  return process.stdout.write(require('../package.json').version)
+}
