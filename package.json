@@ -3,6 +3,7 @@
   "version": "4.4.0",
   "description": "Create a new repo with sane defaults",
   "main": "index.js",
+  "bin": "./bin/initialize.js",
   "scripts": {
     "start": "node bin/initialize.js"
   },
@@ -11,9 +12,6 @@
     "url": "https://github.com/yoshuawuyts/initialize.git"
   },
   "preferGlobal": true,
-  "bin": {
-    "initialize": "./bin/initialize.js"
-  },
   "keywords": [
     "new",
     "project",
