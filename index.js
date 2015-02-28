@@ -1,19 +1,13 @@
 const install = require('./lib/npm-install')
-const exec = require('child_process').exec
-const mustache = require('mustache')
 const write = require('./lib/write')
-const assert = require('assert')
 const git = require('./lib/git')
 const mkdir = require('mkdirp')
-const path = require('path')
-const fs = require('fs')
-const join = path.join
 
-module.exports = writeFiles
+module.exports = init
 
 // Init writing files
 // @param {Object} opts
-function init(opts) {
+function init (opts) {
   const files = opts.files
   const pn = opts.meta.packageName
 

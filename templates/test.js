@@ -1,7 +1,7 @@
-
+const test = require('tape')
 const index = require('./')
-const test  = require('tape')
 
-test('', function(t) {
+test('', function (t) {
+  index()
   t.end()
 })
