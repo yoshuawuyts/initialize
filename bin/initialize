@@ -43,6 +43,7 @@ var opts = {
 if (argv.l || argv.local) {
   opts.files.license = false
   opts.files.travis = false
+  opts.git = false
 }
 
 // find meta vars & start writing
