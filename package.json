@@ -1,8 +1,9 @@
 {
   "name": "initialize",
-  "version": "4.4.0",
+  "version": "5.0.0",
   "description": "Create a new repo with sane defaults",
   "main": "index.js",
+  "bin": "./bin/initialize",
   "scripts": {
     "start": "node bin/initialize.js"
   },
@@ -11,9 +12,6 @@
     "url": "https://github.com/yoshuawuyts/initialize.git"
   },
   "preferGlobal": true,
-  "bin": {
-    "initialize": "./bin/initialize.js"
-  },
   "keywords": [
     "new",
     "project",
@@ -27,8 +25,7 @@
   },
   "homepage": "https://github.com/yoshuawuyts/initialize",
   "dependencies": {
-    "commander": "^2.2.0",
-    "debug": "*",
+    "minimist": "^1.1.0",
     "mkdirp": "^0.4.0",
     "mustache": "^0.8.2"
   }

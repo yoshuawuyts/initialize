@@ -1,0 +1,7 @@
+  Usage: initialize <packageName>
+
+  Options:
+
+    -h, --help                    output usage information
+    -V, --version                 output the version number
+    -l, --local                   create a local module

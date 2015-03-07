@@ -1,0 +1,53 @@
+#!/usr/bin/env node
+const minimist = require('minimist')
+const meta = require('./meta')
+const init = require('../')
+const fs = require('fs')
+
+// parse arguments
+const argv = minimist(process.argv.slice(2))
+process.stdout.on('error', process.exit)
+
+// help
+const noCommands = process.argv.length <= 2 && process.stdin.isTTY
+if (argv._[0] === 'help' || argv.h || argv.help || noCommands) {
+  return fs.createReadStream(__dirname + '/usage.txt')
+    .pipe(process.stdout)
+    .on('close', process.exit.bind(null, 1))
+}
+
+// version
+if (argv.v || argv.version) {
+  return process.stdout.write(require('../package.json').version)
+}
+
+// default options
+var opts = {
+  install: true,
+  git: true,
+  files: {
+    gitignore: true,
+    index: true,
+    license: true,
+    package: true,
+    readme: true,
+    test: true,
+    travis: true
+  },
+  meta: {
+    packageName: argv._[0]
+  }
+}
+
+// local
+if (argv.l || argv.local) {
+  opts.files.license = false
+  opts.files.travis = false
+}
+
+// find meta vars & start writing
+// @param {Object}
+// @param {Function}
+meta(opts, function (nwOpts) {
+  init(nwOpts)
+})
