@@ -5,7 +5,10 @@ const init = require('../')
 const fs = require('fs')
 
 // parse arguments
-const argv = minimist(process.argv.slice(2))
+const argv = minimist(process.argv.slice(2), {
+  boolean: ['l'],
+  alias: {l: 'local'}
+})
 process.stdout.on('error', process.exit)
 
 // help
