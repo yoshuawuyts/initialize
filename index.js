@@ -10,17 +10,18 @@ module.exports = init
 function init (opts) {
   const files = opts.files
   const pn = opts.meta.packageName
+  const writer = write(opts)
 
   mkdir.sync(pn)
   process.chdir(pn)
 
-  if (files.gitignore) write('./.gitignore', 'templates/gitignore')
-  if (files.index) write('./index.js', 'templates/index.js')
-  if (files.license) write('./LICENSE', 'templates/LICENSE')
-  if (files.package) write('./package.json', 'templates/package')
-  if (files.readme) write('./README.md', 'templates/README.md')
-  if (files.test) write('./test.js', 'templates/test.js')
-  if (files.travis) write('./.travis.yml', 'templates/travis.yml')
+  if (files.gitignore) writer('./.gitignore', '../templates/gitignore')
+  if (files.index) writer('./index.js', '../templates/index.js')
+  if (files.license) writer('./LICENSE', '../templates/LICENSE')
+  if (files.package) writer('./package.json', '../templates/package')
+  if (files.readme) writer('./README.md', '../templates/README.md')
+  if (files.test) writer('./test.js', '../templates/test.js')
+  if (files.travis) writer('./.travis.yml', '../templates/travis.yml')
   if (opts.install) install()
   if (opts.git) git()
 }

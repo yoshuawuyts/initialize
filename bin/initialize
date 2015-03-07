@@ -33,6 +33,9 @@ var opts = {
     readme: true,
     test: true,
     travis: true
+  },
+  meta: {
+    packageName: argv._[0]
   }
 }
 
@@ -45,6 +48,6 @@ if (argv.l || argv.local) {
 // find meta vars & start writing
 // @param {Object}
 // @param {Function}
-meta(opts, function(nwOpts) {
+meta(opts, function (nwOpts) {
   init(nwOpts)
 })

@@ -9,7 +9,8 @@ makeConfig.writeFiles = writeFiles
 // @param {Object}
 // @param {Function}
 function makeConfig (obj, cb) {
-
+  obj = obj
+  cb(obj)
 }
 
 /**
