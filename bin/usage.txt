@@ -1,4 +1,4 @@
-  Usage: initialize <dirname>
+  Usage: initialize <packageName>
 
   Options:
 

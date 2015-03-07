@@ -9,28 +9,24 @@ module.exports = makeConfig
 function makeConfig (conf, cb) {
   conf = getConfig(conf)
   whoami(conf, function (name) {
-    conf.name = name
-    conf.username = name
     conf.meta.name = name
+    log(conf)
     cb(conf)
   })
 }
 
  // get confuration.
  // @param {Object} conf
+ // @return {Object}
 function getConfig (conf) {
   var date = new Date()
   var day = date.getDate()
   var month = date.getMonth()
 
-  conf.year = date.getFullYear()
-  conf.day = day.toString().length === 2 ? day : '0' + day
-  conf.month = month.toString().length === 2 ? month : '0' + month
-
-  console.log('packageName: ' + conf.meta.packageName)
-
-  conf.date = conf.year + '-' + conf.month + '-' + conf.day
-  console.log('date: ' + conf.date)
+  conf.meta.year = date.getFullYear()
+  conf.meta.day = day.toString().length === 2 ? day : '0' + day
+  conf.meta.month = month.toString().length === 2 ? month : '0' + month
+  conf.meta.date = conf.meta.year + '-' + conf.meta.month + '-' + conf.meta.day
   return conf
 }
 
@@ -41,7 +37,14 @@ function whoami (conf, cb) {
   exec('npm whoami', function (err, name) {
     assert.ifError(err)
     name = name.replace(/(\n)/gm, '')
-    console.log('user: ' + name)
     cb(name)
   })
+}
+
+// log meta to stdout
+// @param {Object}
+function log (conf) {
+  process.stdout.write('packageName: ' + conf.meta.packageName + '\n')
+  process.stdout.write('date: ' + conf.meta.date + '\n')
+  process.stdout.write('user: ' + conf.meta.name + '\n')
 }

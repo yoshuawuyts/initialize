@@ -10,7 +10,7 @@ module.exports = init
 function init (opts) {
   const files = opts.files
   const pn = opts.meta.packageName
-  const writer = write(opts)
+  const writer = write(opts.meta)
 
   mkdir.sync(pn)
   process.chdir(pn)
