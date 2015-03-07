@@ -27,10 +27,10 @@ function getConfig (conf) {
   conf.day = day.toString().length === 2 ? day : '0' + day
   conf.month = month.toString().length === 2 ? month : '0' + month
 
-  console.log('  packageName: ' + conf.meta.packageName)
+  console.log('packageName: ' + conf.meta.packageName)
 
   conf.date = conf.year + '-' + conf.month + '-' + conf.day
-  console.log('  date: ' + conf.date)
+  console.log('date: ' + conf.date)
   return conf
 }
 
@@ -41,7 +41,7 @@ function whoami (conf, cb) {
   exec('npm whoami', function (err, name) {
     assert.ifError(err)
     name = name.replace(/(\n)/gm, '')
-    console.log('  user: ' + name)
+    console.log('user: ' + name)
     cb(name)
   })
 }
