@@ -1,7 +1,7 @@
 # {{packageName}}
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
-[![Test coverage][coveralls-image]][coveralls-url]
+[![Test coverage][codecov-image]][codecov-url]
 [![Downloads][downloads-image]][downloads-url]
 [![js-standard-style][standard-image]][standard-url]
 
@@ -22,8 +22,8 @@ $ npm install {{packageName}}
 [npm-url]: https://npmjs.org/package/{{packageName}}
 [travis-image]: https://img.shields.io/travis/{{name}}/{{packageName}}/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/{{name}}/{{packageName}}
-[coveralls-image]: https://img.shields.io/coveralls/{{name}}/{{packageName}}.svg?style=flat-square
-[coveralls-url]: https://coveralls.io/r/{{name}}/{{packageName}}?branch=master
+[codecov-image]: https://img.shields.io/codecov/{{name}}/{{packageName}}/master.svg?style=flat-square
+[codecov-url]: https://codecov.io/github/{{name}}/{{packageName}}
 [downloads-image]: http://img.shields.io/npm/dm/{{packageName}}.svg?style=flat-square
 [downloads-url]: https://npmjs.org/package/{{packageName}}
 [standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
