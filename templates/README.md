@@ -22,7 +22,7 @@ $ npm install {{packageName}}
 [npm-url]: https://npmjs.org/package/{{packageName}}
 [travis-image]: https://img.shields.io/travis/{{name}}/{{packageName}}/master.svg?style=flat-square
 [travis-url]: https://travis-ci.org/{{name}}/{{packageName}}
-[codecov-image]: https://img.shields.io/codecov/{{name}}/{{packageName}}/master.svg?style=flat-square
+[codecov-image]: https://img.shields.io/codecov/c/github{{name}}/{{packageName}}/master.svg?style=flat-square
 [codecov-url]: https://codecov.io/github/{{name}}/{{packageName}}
 [downloads-image]: http://img.shields.io/npm/dm/{{packageName}}.svg?style=flat-square
 [downloads-url]: https://npmjs.org/package/{{packageName}}
