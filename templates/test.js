@@ -1,7 +1,7 @@
 const test = require('tape')
-const index = require('./')
+const {{varName}} = require('./')
 
-test('', function (t) {
-  t.plan(0)
-  index()
+test('should assert input types', function (t) {
+  t.plan(1)
+  t.throws({{varName}})
 })

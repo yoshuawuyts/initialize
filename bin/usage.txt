@@ -1,7 +1,17 @@
-  Usage: initialize <packageName>
+initialize - generate a fresh package
 
-  Options:
+Usage: initialize [options]
 
-    -h, --help                    output usage information
-    -V, --version                 output the version number
-    -l, --local                   create a local module
+Options:
+  -h, --help        Output usage information
+  -v, --version     Output version number
+  -u, --user        Override user with organization
+  -d, --directory   Specify output directory
+
+Examples:
+  $ initialize            # generate package in `./`
+  $ initialize -d ./dir   # generate package in `./dir`
+  $ initialize -u npm     # generate package for `npm`
+
+Docs: https://github.com/yoshuawuyts/initialize
+Bugs: https://github.com/yoshuawuyts/initialize/issues

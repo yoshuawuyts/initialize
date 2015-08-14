@@ -7,25 +7,55 @@ Create a new repo with sane defaults. Provides all the tools needed to create
 a unix style module.
 
 ## Installation
-````
-npm install -g initialize
-````
+```sh
+$ npm install -g initialize
+```
 
 ## Usage
-````
-  Usage: initialize <packageName>
+```txt
+initialize - generate a fresh package
 
-  Options:
+Usage: initialize [options]
 
-    -h, --help                    output usage information
-    -V, --version                 output the version number
-    -l, --local                   create a local module
+Options:
+  -h, --help        Output usage information
+  -v, --version     Output version number
+  -u, --user        Override user with organization
+  -d, --directory   Specify output directory
+
+Examples:
+  $ initialize            # generate package in `./`
+  $ initialize -d ./dir   # generate package in `./dir`
+  $ initialize -u npm     # generate package for `npm`
+
+Docs: https://github.com/yoshuawuyts/initialize
+Bugs: https://github.com/yoshuawuyts/initialize/issues
 ```
 
 ## .npmrc
-Make sure`~/.npmrc` contains at least the following value:
+Requires npm to be configured:
+```sh
+# required
+npm config set init.author.name "Your Name"
+npm config set init.author.email "me@example.com"
+npm config set init.author.github "your-github-handle"
+
+# optional, defaults to your github
+npm config set init.author.url "http://your-site.com/"
 ```
-init.author.name=tobiferret
+
+## Variables
+The following variables are used in the templates:
+```txt
+name          Name of the package
+varName       Name of package usable as JS var
+description   Description of the package
+tags          Package tags
+user          Logged in user
+date.year     Current year
+date.month    Current month
+date.day      Current day
+date.date     Current date
 ```
 
 ## License

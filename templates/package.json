@@ -1,13 +1,13 @@
 {
-  "name": "{{packageName}}",
+  "name": "{{name}}",
   "version": "1.0.0",
-  "description": "{{packageName}}",
+  "description": "{{description}}",
   "main": "index.js",
   "scripts": {
     "test": "standard && NODE_ENV=test node test",
-    "test-cov": "standard && NODE_ENV=test istanbul cover test.js"
+    "test:cov": "standard && NODE_ENV=test istanbul cover test.js"
   },
-  "repository": "{{name}}/{{packageName}}",
+  "repository": "{{user}}/{{name}}",
   "keywords": [],
   "license": "MIT",
   "dependencies": {
