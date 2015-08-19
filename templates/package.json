@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "deps": "dependency-check . && dependency-check . --extra",
-    "test": "standard && && npm run deps && NODE_ENV=test node test",
+    "test": "standard && npm run deps && NODE_ENV=test node test",
     "test:cov": "standard && npm run deps && NODE_ENV=test istanbul cover test.js"
   },
   "repository": "{{user}}/{{name}}",
