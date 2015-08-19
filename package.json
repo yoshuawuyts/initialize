@@ -8,7 +8,7 @@
     "test": "node bin/initialize -d ./tmp",
     "test:random": "node bin/initialize -d ./tmp/\"$RANDOM\"",
     "clean": "rm -rf ./tmp",
-    "deps": "dependency-check . && dependency-check . --extra"
+    "deps": "dependency-check . && dependency-check . --extra --no-dev"
   },
   "repository": "yoshuawuyts/initialize",
   "preferGlobal": true,
