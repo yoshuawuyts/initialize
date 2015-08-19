@@ -25,7 +25,12 @@ const opts = {
     'package.json',
     'test.js'
   ],
-  devDependencies: [ 'istanbul', 'standard', 'tape' ]
+  devDependencies: [
+    'dependency-check',
+    'istanbul',
+    'standard',
+    'tape'
+  ]
 }
 
 module.exports = engine.bind(null, opts)
