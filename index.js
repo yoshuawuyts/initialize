@@ -67,7 +67,7 @@ function runPrompt (argv, cb) {
       filter: function (str) {
         str = str || ''
         return str.split(',').map(function (str) {
-          return str.trim()
+          return '"' + str.trim() + '"'
         })
       }
     }

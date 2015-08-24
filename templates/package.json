@@ -9,7 +9,7 @@
     "test:cov": "standard && npm run deps && NODE_ENV=test istanbul cover test.js"
   },
   "repository": "{{user}}/{{name}}",
-  "keywords": [],
+  "keywords": [{{{tags}}}],
   "license": "MIT",
   "dependencies": {
   },
