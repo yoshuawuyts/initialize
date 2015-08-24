@@ -9,6 +9,7 @@ const mkdirp = require('mkdirp')
 const path = require('path')
 
 const opts = {
+  templates: path.join(__dirname, 'templates'),
   pre: [
     runPrompt,
     createDir,
