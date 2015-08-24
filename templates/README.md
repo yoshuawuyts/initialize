@@ -1,12 +1,11 @@
 # {{name}}
-
-{{description}}.
-
 [![NPM version][npm-image]][npm-url]
 [![build status][travis-image]][travis-url]
 [![Test coverage][codecov-image]][codecov-url]
 [![Downloads][downloads-image]][downloads-url]
 [![js-standard-style][standard-image]][standard-url]
+
+{{description}}.
 
 ## Installation
 ```sh
