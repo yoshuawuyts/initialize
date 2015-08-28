@@ -51,7 +51,8 @@ name          Name of the package
 varName       Name of package usable as JS var
 description   Description of the package
 tags          Package tags
-user          Logged in user
+user          Logged in user (github)
+realName      User's real name
 date.year     Current year
 date.month    Current month
 date.day      Current day

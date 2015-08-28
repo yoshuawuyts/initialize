@@ -103,10 +103,14 @@ function getUser (argv, next) {
   const conf = rc('npm')
   if (!conf) return next('no npm config found')
 
-  const name = conf['init.author.name']
-  if (!name) return next('no npm.author.name set')
+  const github = conf['init.author.github']
+  if (!github) return next('no init.author.github set')
 
-  argv.user = name
+  const name = conf['init.author.name']
+  if (!name) return next('no init.author.name set')
+
+  argv.user = github
+  argv.realName = name
   next()
 }
 
