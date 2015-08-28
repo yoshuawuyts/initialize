@@ -3,10 +3,10 @@ const engine = require('initialize-engine')
 const prompt = require('inquirer').prompt
 const assign = require('object-assign')
 const today = require('dates-of-today')
-const whoami = require('npm-whoami')
 const gitInit = require('git-init')
 const mkdirp = require('mkdirp')
 const path = require('path')
+const rc = require('rc')
 
 const opts = {
   templates: path.join(__dirname, 'templates'),
@@ -99,11 +99,15 @@ function createDir (argv, next) {
 // (obj, fn) -> null
 function getUser (argv, next) {
   if (argv.user) return next()
-  whoami(function (err, user) {
-    if (err) throw err
-    argv.user = user
-    next()
-  })
+
+  const conf = rc('npm')
+  if (!conf) return next('no npm config found')
+
+  const name = conf['init.author.name']
+  if (!name) return next('no npm.author.name set')
+
+  argv.user = name
+  next()
 }
 
 // get today's dates
