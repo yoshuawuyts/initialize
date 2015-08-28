@@ -20,7 +20,7 @@ const {{varName}} = require('{{name}}')
 ```
 
 ## API
-### {{name}}
+### {{varName}}
 
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)
