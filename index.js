@@ -27,6 +27,7 @@ const opts = {
     'test.js'
   ],
   devDependencies: [
+    'npm-check-updates',
     'dependency-check',
     'istanbul',
     'standard',
