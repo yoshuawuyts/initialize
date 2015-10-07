@@ -1,7 +1,5 @@
 # initialize [![stability][0]][1]
-[![NPM version][npm-image]][npm-url]
-[![Downloads][downloads-image]][downloads-url]
-[![js-standard-style][standard-image]][standard-url]
+[![NPM version][2]][3] [![Downloads][4]][5] [![js-standard-style][6]][7]
 
 Create a new repo with sane defaults. Provides all the tools needed to create
 a unix style module.
@@ -60,16 +58,21 @@ date.date     Current date
 ```
 
 ## See Also
-- [initialize-engine](https://www.npmjs.com/package/initialize-engine)
+- [initialize-cli][10]
+- [initialize-project][11]
+- [initialize-subpackage][12]
 
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)
 
 [0]: https://img.shields.io/badge/stability-stable-brightgreen.svg?style=flat-square
 [1]: https://nodejs.org/api/documentation.html#documentation_stability_index
-[npm-image]: https://img.shields.io/npm/v/initialize.svg?style=flat-square
-[npm-url]: https://npmjs.org/package/initialize
-[downloads-image]: http://img.shields.io/npm/dm/initialize.svg?style=flat-square
-[downloads-url]: https://npmjs.org/package/initialize
-[standard-image]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
-[standard-url]: https://github.com/feross/standard
+[2]: https://img.shields.io/npm/v/initialize.svg?style=flat-square
+[3]: https://npmjs.org/package/initialize
+[4]: http://img.shields.io/npm/dm/initialize.svg?style=flat-square
+[5]: https://npmjs.org/package/initialize
+[6]: https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat-square
+[7]: https://github.com/feross/standard
+[10]: http://github.com/yoshuawuyts/initialize-cli
+[11]: http://github.com/yoshuawuyts/initialize-project
+[12]: http://github.com/yoshuawuyts/initialize-subpackage
