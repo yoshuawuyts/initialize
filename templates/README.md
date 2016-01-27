@@ -4,11 +4,6 @@
 
 {{description}}.
 
-## Installation
-```sh
-$ npm install {{name}}
-```
-
 ## Usage
 ```js
 const {{varName}} = require('{{name}}')
@@ -18,6 +13,11 @@ const {{varName}} = require('{{name}}')
 
 ## API
 ### {{varName}}
+
+## Installation
+```sh
+$ npm install {{name}}
+```
 
 ## License
 [MIT](https://tldrlegal.com/license/mit-license)
