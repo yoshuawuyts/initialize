@@ -33,6 +33,6 @@
   },
   "devDependencies": {
     "dependency-check": "^2.5.0",
-    "standard": "^8.0.0"
+    "standard": "^8.4.0"
   }
 }
